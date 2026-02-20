@@ -39,6 +39,18 @@ app.get("/", (req, res) => {
           font-size: 0.8rem;
           color: #fff;
         }
+        button {
+          margin-top: 1.5rem;
+          padding: 0.6rem 1.4rem;
+          background: #7c3aed;
+          color: #fff;
+          border: none;
+          border-radius: 8px;
+          font-size: 1rem;
+          cursor: pointer;
+        }
+        button:hover { background: #6d28d9; }
+        #datetime { margin-top: 1rem; font-size: 1rem; color: #ccc; }
       </style>
     </head>
     <body>
@@ -46,7 +58,15 @@ app.get("/", (req, res) => {
         <h1>Hello, World!</h1>
         <p>Built with Node.js + Express</p>
         <span class="badge">Deployed on Railway</span>
+        <br/><br/>
+        <button onclick="showDateTime()">Show Date &amp; Time</button>
+        <p id="datetime"></p>
       </div>
+      <script>
+        function showDateTime() {
+          document.getElementById("datetime").textContent = new Date().toLocaleString();
+        }
+      </script>
     </body>
     </html>
   `);
